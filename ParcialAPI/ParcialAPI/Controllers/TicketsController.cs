@@ -37,8 +37,10 @@ namespace ParcialAPI.Controllers
         [HttpPut, ActionName("Edit")]
         [Route("Edit")]
 
-        public async Task<ActionResult<Ticket>> EditTicket(Guid id, Ticket ticket)
+        public async Task<ActionResult<Ticket>> EditTicket(Guid? id)
         {
+            var ticket = await _context.Tickets.FirstOrDefaultAsync(c => c.ID == id);
+
             if (ticket == null) return NotFound("Boleta no válida");
 
             if (ticket.IsUsed == true) return Problem("Boleta ya usada");
@@ -50,7 +52,7 @@ namespace ParcialAPI.Controllers
             _context.Tickets.Update(ticket);
             await _context.SaveChangesAsync();
 
-            return Ok("Boleta válida, puede ingresar al concierto");
+            return Ok(String.Format("Boleta válida, puede ingresar al concierto"));
         } 
         
     }
