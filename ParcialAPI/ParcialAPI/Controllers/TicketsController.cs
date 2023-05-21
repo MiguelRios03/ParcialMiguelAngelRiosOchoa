@@ -29,7 +29,7 @@ namespace ParcialAPI.Controllers
         {
             var tickets = await _context.Tickets.ToListAsync();
 
-            if (tickets == null) return NotFound();
+            if (tickets == null) return NotFound("No hay tickets vendidos");
 
             return tickets;
         }
@@ -43,7 +43,7 @@ namespace ParcialAPI.Controllers
 
             if (ticket == null) return NotFound("Boleta no válida");
 
-            if (ticket.IsUsed == true) return Problem("Boleta ya usada");
+            if (ticket.IsUsed == true) return Ok("Boleta ya usada");
 
             ticket.UseDate = DateTime.Now;
             ticket.IsUsed = true;
