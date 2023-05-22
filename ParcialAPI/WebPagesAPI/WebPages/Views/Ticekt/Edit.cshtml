@@ -1,0 +1,23 @@
+﻿@model ParcialAPI.DAL.Entities.Ticket
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4>Tickets</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <partial name="../Shared/PartialViews/_CategoryCreateEdit.cshtml" />
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                <a asp-action="Index" class="btn btn-outline-success">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+

@@ -15,6 +15,6 @@ namespace ParcialAPI.DAL.Entities
 
         [Display(Name = "Entrada")]
         [MaxLength(10, ErrorMessage ="El campo {0} debe tener máximo {1} caracteres.")]
-        public string? EntranceGate { get; set; }
+        public string EntranceGate { get; set; }
     }
 }

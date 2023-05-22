@@ -23,11 +23,11 @@ SeederData();
 
 void SeederData()
 {
-    IServiceScopeFactory? scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+    IServiceScopeFactory scopedFactory = app.Services.GetService<IServiceScopeFactory>();
 
-    using (IServiceScope? scope = scopedFactory.CreateScope())
+    using (IServiceScope scope = scopedFactory.CreateScope())
     {
-        SeederDB? service = scope.ServiceProvider.GetService<SeederDB>();
+        SeederDB service = scope.ServiceProvider.GetService<SeederDB>();
         service.SeederAsync().Wait();
     }
 }

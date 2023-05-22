@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcialAPI", "ParcialAPI\ParcialAPI.csproj", "{9BE2A2C1-01B8-4CAA-9605-E58DF2D15E73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParcialAPI", "ParcialAPI\ParcialAPI.csproj", "{9BE2A2C1-01B8-4CAA-9605-E58DF2D15E73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPages", "WebPagesAPI\WebPages\WebPages.csproj", "{70E84830-491E-4E2C-840C-DA5B7F61A7C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9BE2A2C1-01B8-4CAA-9605-E58DF2D15E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BE2A2C1-01B8-4CAA-9605-E58DF2D15E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BE2A2C1-01B8-4CAA-9605-E58DF2D15E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70E84830-491E-4E2C-840C-DA5B7F61A7C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70E84830-491E-4E2C-840C-DA5B7F61A7C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70E84830-491E-4E2C-840C-DA5B7F61A7C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70E84830-491E-4E2C-840C-DA5B7F61A7C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
