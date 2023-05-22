@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="..\..\ParcialAPI\DAL\Entities\Ticket.cs" Link="Models\Ticket.cs" />
   </ItemGroup>
 

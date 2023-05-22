@@ -1,0 +1,55 @@
+﻿@model ParcialAPI.DAL.Entities.Ticket
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4>Boleta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <h4>Boleta</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ID)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ID)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.IsUsed)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.IsUsed)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.UseDate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.UseDate)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.EntranceGate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.EntranceGate)
+                </dd>
+            </dl>
+
+            <div class="form-group">
+                <a asp-action="Index" class="btn btn-outline-success">Regresar</a>
+            </div>
+            <input type="submit" value="Guardar" class="btn btn-outline-warning" />
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
