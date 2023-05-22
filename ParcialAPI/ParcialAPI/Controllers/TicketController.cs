@@ -40,13 +40,13 @@ namespace ParcialAPI.Controllers
         {
             var ticket = await _context.Tickets.FirstOrDefaultAsync(c => c.ID == id);
 
-            if (ticket == null) return NotFound("Boleta no válida");
+            if (ticket == null) return NotFound("La boleta no es válida.");
 
-            if (ticket.IsUsed == true) return Ok("Boleta ya usada");
+            if (ticket.IsUsed == true) return BadRequest("La boleta ya fue usada.");
 
-            await EditTicket(ticket.ID, ticket);
+            if (ticket.IsUsed == false && ticket != null) return Ok("La boleta es valida, puede ingresar al concierto.");
 
-            return Ok(String.Format("Boleta valida, puede ingresar al concierto"));
+            return Ok(ticket);
         }
 
         [HttpPost, ActionName("Edit")]

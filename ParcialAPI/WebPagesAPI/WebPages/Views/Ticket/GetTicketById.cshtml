@@ -1,52 +1,27 @@
 ﻿@model ParcialAPI.DAL.Entities.Ticket
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "GetTickedById";
 }
 
-<h4>Boleta</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
-            <h4>Boleta</h4>
-            <hr />
-            <dl class="row">
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.ID)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.ID)
-                </dd>
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.IsUsed)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.IsUsed)
-                </dd>
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.UseDate)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.UseDate)
-                </dd>
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.EntranceGate)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.EntranceGate)
-                </dd>
-            </dl>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css" />
 
-            <div class="form-group">
-                <a asp-action="Index" class="btn btn-outline-success">Regresar</a>
-            </div>
-            <input type="submit" value="Guardar" class="btn btn-outline-warning" />
-        </form>
-    </div>
+<div class="text-center">
+    <h1 class="display-4">Ingreso ticket</h1>
+    <form asp-controller="Ticket" asp-action="GetTicketById" method="get">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <div class="form-group">
+            <input name="id" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Consultar" class="btn btn-outline-primary" />
+            <a asp-action="Index" class="btn btn-outline-success">Regresar</a>
+        </div>
+    </form>
 </div>
+
 
 @section Scripts {
     @{

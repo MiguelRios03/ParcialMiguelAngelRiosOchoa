@@ -15,20 +15,12 @@ namespace WebPages.Controllers
             _httpClient = httpClient;
             _configuration = configuration;
         }
-
         public async Task<IActionResult> Index()
         {
-            try
-            {
-                //var url = "https://localhost:7258/api/Ticket/Get/";
-                //var json = await _httpClient.CreateClient().GetStringAsync(url);
-                //List<Ticket> tickets = JsonConvert.DeserializeObject<List<Ticket>>(json);
-                return View();
-            }
-            catch (Exception ex)
-            {
-                return View("Error", ex);
-            }
+            var url = "https://localhost:7258/api/Ticket/Get";
+            var json = await _httpClient.CreateClient().GetStringAsync(url);
+            List<Ticket> tickets = JsonConvert.DeserializeObject<List<Ticket>>(json);
+            return View(tickets); 
         }
 
         [HttpGet]
@@ -55,9 +47,12 @@ namespace WebPages.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Edit()
+        public async Task<IActionResult> Edit(Guid id)
         {
-            return View();
+            var url = String.Format("https://localhost:7258/api/Ticket/Get/{0}", id);
+            var json = await _httpClient.CreateClient().GetStringAsync(url);
+            Ticket ticket = JsonConvert.DeserializeObject<Ticket>(json);
+            return View(ticket);
         }
 
         [HttpPost]
